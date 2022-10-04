@@ -20,6 +20,6 @@ server.use("/hello", authToken, router);
 
 // Use default router
 // server.use(router);
-server.listen(3000, () => {
-  console.log("JSON Server is running on port 3000");
+server.listen(4000, () => {
+  console.log("JSON Server is running on port 4000");
 });
