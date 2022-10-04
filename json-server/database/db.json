@@ -1,0 +1,24 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Vuk",
+      "title": "Emperor"
+    },
+    {
+      "id": 2,
+      "name": "Cira",
+      "title": "King"
+    },
+    {
+      "id": 3,
+      "name": "Milos",
+      "title": "Duke"
+    },
+    {
+      "name": "Petar",
+      "title": "Chimneysweeper",
+      "id": 4
+    }
+  ]
+}
