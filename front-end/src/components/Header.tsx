@@ -6,8 +6,10 @@ import { RiArrowDownSLine } from "react-icons/ri";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center py-2 px-4 md:px-9">
-      <AiOutlineMenu size={20} className="cursor-pointer text-tirquoise" />
+    <header className="flex justify-between items-center py-2 px-2 md:px-8">
+      <div className="p-2 cursor-pointer">
+        <AiOutlineMenu size={20} className="text-tirquoise" />
+      </div>
       <div className="flex items-center">
         <div className="py-2 px-3 cursor-pointer">
           <CgShoppingCart size={22} className="text-tirquoise" />
