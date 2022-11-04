@@ -1,4 +1,3 @@
-import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
 
 import { useRoutes } from "react-router";
