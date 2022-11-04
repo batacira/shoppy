@@ -1,8 +1,9 @@
-import Sidebar from './components/Sidebar/Sidebar';
+import Sidebar from "./components/Sidebar/Sidebar";
 
 import { useRoutes } from "react-router";
 import { protectedRoutes } from "./routes/protected";
 import { publicRoutes } from "./routes/public";
+import Header from "./components/Header";
 
 function App() {
   // const routes = "signedin" ? protectedRoutes : publicRoutes;
@@ -11,10 +12,7 @@ function App() {
 
   // return element
 
-
-  return (
-    <Sidebar />
-  );
+  return <Sidebar />;
 }
 
 export default App;
