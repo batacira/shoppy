@@ -16,7 +16,7 @@ const SidebarIconName = ({ name, Icon, path }: Props) => {
         >
             <div className='bg-inherit flex items-center gap-5 pt-4 pl-3 pb-4 rounded-lg text-md ml-3 text-inherit mb-2'>
                 <div>
-                    <Icon size={27} />
+                    <Icon size={20} />
                 </div>
                 <p className='capitalize pr-2 text-xl'>{name}</p>
             </div>
