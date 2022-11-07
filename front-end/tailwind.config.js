@@ -8,7 +8,6 @@ module.exports = {
         yellow: "#fec90f",
         textLightGray: "#9ca3af",
       },
-    },
       fontSize: {
         14: "14px",
         24: "24,",
@@ -49,6 +48,7 @@ module.exports = {
       },
     },
   },
+
   plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],
   variants: {
     scrollbar: ["rounded"],

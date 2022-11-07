@@ -6,8 +6,8 @@ import { RiArrowDownSLine } from "react-icons/ri";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center py-2 px-2 md:px-8">
-      <div className="p-2 cursor-pointer">
+    <header className="flex justify-between items-center md:px-10 fixed md:static  navbar w-full ">
+      <div className=" cursor-pointer">
         <AiOutlineMenu size={20} className="text-tirquoise" />
       </div>
       <div className="flex items-center">

@@ -1,10 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
+import Layout from "../components/Layout/Layout";
 
 function ProtectedRoutesLayout() {
   return (
     <>
-      {`<Layout />`}
-      <Outlet />
+      <Layout>
+        <Outlet />
+      </Layout>
     </>
   );
 }
