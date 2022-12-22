@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
+import Orders from "../components/Orders/Orders";
 
 function ProtectedRoutesLayout() {
   return (
@@ -21,7 +22,7 @@ export const protectedRoutes = [
       },
       {
         path: "/orders",
-        element: `<Orders />`,
+        element: <Orders />,
       },
       {
         path: "/employees",
