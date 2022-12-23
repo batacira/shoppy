@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useTable } from 'react-table';
-import { ordersGrid } from '../../data/dummy'
+import { ordersData } from '../../data/dummy'
 import { COLUMNS } from './columns'
 
 // interface Columns {
@@ -12,8 +12,10 @@ type Cols = { Header: string; accessor: string }
 
 const Orders = () => {
 
-    const columns = useMemo((): Cols[] => COLUMNS, [])
-    const data = useMemo(() => ordersGrid, [])
+    const data = useMemo(() => ordersData, [])
+    const columns = useMemo((): Cols[] =>
+        /* ovde filtriramo za sliku,  39 min. */
+        COLUMNS, [])
 
     console.log(columns);
 
@@ -22,11 +24,47 @@ const Orders = () => {
         columns,
         data
     })
+    console.log(columns);
+    console.log(data);
+
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance
+
 
     return (
-        <div>
-            <p>nesto</p>
-        </div>
+        <table {...getTableProps()}>
+            <thead>
+                {
+                    headerGroups.map((headerGroup) => (
+                        <tr {...headerGroup.getHeaderGroupProps()}>
+                            {
+                                headerGroup.headers.map((column) => (
+
+                                    <th {...column.getHeaderProps()}>
+                                        {column.render('Header')}
+                                    </th>
+                                ))
+                            }
+                        </tr>
+                    ))
+                }
+            </thead>
+            <tbody {...getTableBodyProps()}>
+                {rows.map((row) => {
+                    prepareRow(row)
+                    return (
+                        <tr {...row.getRowProps()}>
+                            {
+                                row.cells.map((cell) => {
+                                    console.log(cell.getCellProps());
+                                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+
+                                })
+                            }
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </table>
     )
 }
 

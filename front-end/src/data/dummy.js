@@ -916,6 +916,7 @@ export const ordersGrid = [
     template: gridOrderImage,
     textAlign: "Center",
     width: "120",
+    nameOne: "Image",
   },
   {
     field: "OrderItems",
@@ -923,6 +924,7 @@ export const ordersGrid = [
     width: "150",
     editType: "dropdownedit",
     textAlign: "Center",
+    nameOne: "Image",
   },
   {
     field: "CustomerName",

@@ -1,30 +1,31 @@
 export const COLUMNS = [
   {
     Header: "Image",
-    accessor: "Image"
+    accessor: "ProductImage",
+    // selector: (row:any) => row.Header
   },
   {
     Header: "Item",
-    accessor: "field"
+    accessor: "OrderItems"
   },
   {
     Header: "Customer Name",
-    accessor: "field"
+    accessor: "CustomerName"
   },
   {
-    Header: "Total Amount",
-    accessor: "field"
+    Header: "TotalAmount",
+    accessor: "TotalAmount"
   },
   {
     Header: "Status",
-    accessor: "field"
+    accessor: "Status"
   },
   {
     Header: "Order ID",
-    accessor: "field"
+    accessor: "OrderID"
   },
   {
     Header: "Location",
-    accessor: "field"
+    accessor: "Location"
   },
 ];
