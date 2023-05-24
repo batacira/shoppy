@@ -7,6 +7,9 @@ import Header from "./components/Header";
 
 function App() {
   const routes = "signedin" ? protectedRoutes : publicRoutes;
+  console.log(routes, 'rute');
+
+  console.log(routes);
 
   const element = useRoutes(routes);
   console.log(element);
