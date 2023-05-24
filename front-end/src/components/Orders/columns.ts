@@ -2,7 +2,6 @@ export const COLUMNS = [
   {
     Header: "Image",
     accessor: "ProductImage",
-    // selector: (row:any) => row.Header
   },
   {
     Header: "Item",

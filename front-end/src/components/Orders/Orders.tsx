@@ -12,10 +12,19 @@ type Cols = { Header: string; accessor: string }
 
 const Orders = () => {
 
+    console.log(ordersData, 'dddddddddddddddddddddddddddddddddddddddddddddddddddd');
     const data = useMemo(() => ordersData, [])
     const columns = useMemo((): Cols[] =>
-        /* ovde filtriramo za sliku,  39 min. */
-        COLUMNS, [])
+        ordersData[0] ? COLUMNS.map((obj) => {
+            if (obj.Header === 'Image')
+                return {
+                    Header: "Image",
+                    accessor: "ProductImage",
+                    Cell: ({ value }: any) => <img src={value} alt={value} width={100} className='m-auto rounded-xl text-opacity-100' />,
+                }
+            return obj
+        }) : []
+        , [])
 
     console.log(columns);
 
@@ -31,40 +40,46 @@ const Orders = () => {
 
 
     return (
-        <table {...getTableProps()}>
-            <thead>
-                {
-                    headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {
-                                headerGroup.headers.map((column) => (
+        <div>
+            <p className='text-4xl font-bold mb-10'>Orders</p>
+            <div className='border-1 border-gray-300'>
+                <table {...getTableProps()} className='w-full'>
+                    <thead>
+                        {
+                            headerGroups.map((headerGroup) => (
+                                <tr {...headerGroup.getHeaderGroupProps()} className='text-opacity-50'>
+                                    {
+                                        headerGroup.headers.map((column) => (
 
-                                    <th {...column.getHeaderProps()}>
-                                        {column.render('Header')}
-                                    </th>
-                                ))
-                            }
-                        </tr>
-                    ))
-                }
-            </thead>
-            <tbody {...getTableBodyProps()}>
-                {rows.map((row) => {
-                    prepareRow(row)
-                    return (
-                        <tr {...row.getRowProps()}>
-                            {
-                                row.cells.map((cell) => {
-                                    console.log(cell.getCellProps());
-                                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                            <th {...column.getHeaderProps()} className='border-1 border-gray-300 opacity-60'>
+                                                {column.render('Header')}
+                                            </th>
+                                        ))
+                                    }
+                                </tr>
+                            ))
+                        }
+                    </thead>
+                    <tbody {...getTableBodyProps()} >
+                        {rows.map((row) => {
+                            prepareRow(row)
+                            return (
+                                <tr {...row.getRowProps()} className='border-1 border-gray-300'>
+                                    {
+                                        row.cells.map((cell) => {
+                                            console.log(cell.getCellProps());
+                                            return <td className='text-center p-2' {...cell.getCellProps()}>{cell.render('Cell')}</td>
 
-                                })
-                            }
-                        </tr>
-                    )
-                })}
-            </tbody>
-        </table>
+                                        })
+                                    }
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </div>
+
+        </ div>
     )
 }
 

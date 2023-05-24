@@ -2,19 +2,19 @@ import { Navigate, Outlet } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Orders from "../components/Orders/Orders";
 
-function ProtectedRoutesLayout() {
+function ProtectedRoutesLayout() { // 3.
   return (
     <>
-      <Layout>
-        <Outlet />
+      <Layout> {/* 4. */}
+        <Outlet /> {/* 5. */}
       </Layout>
     </>
   );
 }
 
-export const protectedRoutes = [
+export const protectedRoutes = [ // 1.
   {
-    element: <ProtectedRoutesLayout />,
+    element: <ProtectedRoutesLayout />, // 2.
     children: [
       {
         path: "/",
